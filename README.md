@@ -18,8 +18,8 @@
 |------|----|-------|
 |message|text||
 |image|string||
-|user_id|reference|foreign_key: true|
-|group_id|reference|foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
