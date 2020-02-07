@@ -17,16 +17,17 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
+|image|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
-- has_many :images
+<!-- - has_many :images -->
 
 
-## imagesテーブル
+<!-- ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -34,7 +35,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :message
-- has_many :groups
+- has_many :groups -->
 
 
 ## groupsテーブル
@@ -45,7 +46,7 @@
 ### Association
 - has_many :messages
 - has_many :users through: groups_users
-- belongs_to :image
+<!-- - belongs_to :image -->
 
 
 ## groups_usersテーブル
