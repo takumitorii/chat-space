@@ -3,7 +3,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index|
+|name|string|null: false, index: true|
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
@@ -18,8 +18,8 @@
 |------|----|-------|
 |message|text|null: false|
 |image|string|null: false|
-|user_id|reference|null: false, foreign_key: true|
-|group_id|reference|null: false, foreign_key: true|
+|user_id|reference|foreign_key: true|
+|group_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -33,7 +33,7 @@
 ### Association
 - has_many :messages
 - has_many :groups_users
-- has_many :users through: groups_users
+- has_many :users through: :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
