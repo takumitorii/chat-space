@@ -24,19 +24,6 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
-<!-- - has_many :images -->
-
-
-<!-- ## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-
-### Association
-- belongs_to :user
-- belongs_to :message
-- has_many :groups -->
-
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -45,9 +32,8 @@
 
 ### Association
 - has_many :messages
+- has_many :groups_users
 - has_many :users through: groups_users
-<!-- - belongs_to :image -->
-
 
 ## groups_usersテーブル
 |Column|Type|Options|
