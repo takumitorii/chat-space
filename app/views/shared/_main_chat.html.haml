@@ -1,0 +1,45 @@
+.main-chat
+  .main-chat__header
+    .main-chat__header--group_member_list
+      %p test1
+      %ul.menber-list 
+        %li.list-title Menber: 
+        %li name1
+    .main-chat__header--btn
+      = link_to "#", class: "btn" do
+        Edit
+
+  .main-chat__contents
+    .main-chat__contents--info
+      .name
+        name
+      .date
+        2020-01-01
+    .main-chat__contents--message
+      おはよう
+    .main-chat__contents--info
+      .name
+        name
+      .date
+        2020-01-01
+    .main-chat__contents--message
+      おはよう
+    .main-chat__contents--info
+      .name
+        name
+      .date
+        2020-01-01
+    .main-chat__contents--message
+      おはよう
+      
+  .main-chat__footer
+    .main-chat__footer--input_box
+      .input
+        %input.input(type = "text")
+      .footer_logo
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input.display_none{type: "file"}
+    .main-chat__footer--btn
+      = link_to "#", class: "footer_btn" do
+        Send
