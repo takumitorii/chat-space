@@ -1,0 +1,27 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header--items
+      .user_name
+        name
+      .icon
+        = link_to "#", class: "edit" do
+          = icon('far', 'edit')
+        = link_to "#", class: "cog" do
+          = icon('fas', 'cog')
+          
+  .side-bar__contents
+    .side_bar__contents--groups 
+      = link_to "#", class: "group" do
+        test1
+      .message
+        メッセージはありません
+    .side_bar__contents--groups 
+      = link_to "#", class: "group" do
+        test22
+      .message
+        メッセージはありません
+    .side_bar__contents--groups 
+      = link_to "#", class: "group" do
+        test333
+      .message
+        メッセージはありません
