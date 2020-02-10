@@ -2,11 +2,11 @@
   .side-bar__header
     .side-bar__header--items
       .user_name
-        name
+        = current_user.name
       .icon
         = link_to "#", class: "edit" do
           = icon('far', 'edit')
-        = link_to "#", class: "cog" do
+        = link_to edit_user_path(current_user), class: "cog" do
           = icon('fas', 'cog')
           
   .side-bar__contents
