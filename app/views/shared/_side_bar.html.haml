@@ -4,24 +4,15 @@
       .user_name
         = current_user.name
       .icon
-        = link_to "#", class: "edit" do
+        = link_to new_group_path, class: "edit" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "cog" do
           = icon('fas', 'cog')
           
   .side-bar__contents
-    .side_bar__contents--groups 
-      = link_to "#", class: "group" do
-        test1
-      .message
-        メッセージはありません
-    .side_bar__contents--groups 
-      = link_to "#", class: "group" do
-        test22
-      .message
-        メッセージはありません
-    .side_bar__contents--groups 
-      = link_to "#", class: "group" do
-        test333
-      .message
-        メッセージはありません
+    - current_user.groups.each do |group|
+      .side_bar__contents--groups 
+        = link_to "#", class: "group" do
+          = group.name
+        .message
+          メッセージはありません
