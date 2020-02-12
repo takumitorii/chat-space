@@ -1,45 +1,30 @@
 .main-chat
   .main-chat__header
     .main-chat__header--group_member_list
-      %p test1
+      %p
+        = @group.name
       %ul.menber-list 
-        %li.list-title Menber: 
-        %li name1
+        %li.list-title 
+          Menber : 
+          - @group.users.each do |user|
+            = user.name
+
     .main-chat__header--btn
-      = link_to "#", class: "btn" do
+      = link_to edit_group_path(@group), class: "btn" do
         Edit
 
   .main-chat__contents
-    .main-chat__contents--info
-      .name
-        name
-      .date
-        2020-01-01
-    .main-chat__contents--message
-      おはよう
-    .main-chat__contents--info
-      .name
-        name
-      .date
-        2020-01-01
-    .main-chat__contents--message
-      おはよう
-    .main-chat__contents--info
-      .name
-        name
-      .date
-        2020-01-01
-    .main-chat__contents--message
-      おはよう
-      
-  .main-chat__footer
-    .main-chat__footer--input_box
-      .input
-        %input.input(type = "text")
-      .footer_logo
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input.display_none{type: "file"}
-    .main-chat__footer--btn
-      = link_to "#", class: "footer_btn" do
-        Send
+    = render @messages
+
+  
+  = form_for [@group, @message] do |f|
+    .main-chat__footer
+      .main-chat__footer--input_box
+        .input
+          = f.text_field :content, class: 'input', placeholder: 'type a message'
+        .footer_logo
+          = f.label :image, class: 'input-box__image' do
+            = icon('fas', 'image')
+            = f.file_field :image, class: 'display_none'
+      .main-chat__footer--btn
+        = f.submit 'Send', class: 'footer_btn'
