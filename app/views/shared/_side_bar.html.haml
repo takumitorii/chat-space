@@ -12,7 +12,7 @@
   .side-bar__contents
     - current_user.groups.each do |group|
       .side_bar__contents--groups 
-        = link_to "#", class: "group" do
+        = link_to group_messages_path(group), class: "group" do
           = group.name
         .message
-          メッセージはありません
+          = group.show_last_message
