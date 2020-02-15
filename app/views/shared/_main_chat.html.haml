@@ -16,15 +16,15 @@
   .main-chat__contents
     = render @messages
 
-  
   = form_for [@group, @message] do |f|
-    .main-chat__footer
-      .main-chat__footer--input_box
-        .input
-          = f.text_field :content, class: 'input', placeholder: 'type a message'
-        .footer_logo
-          = f.label :image, class: 'input-box__image' do
-            = icon('fas', 'image')
-            = f.file_field :image, class: 'display_none'
-      .main-chat__footer--btn
-        = f.submit 'Send', class: 'footer_btn'
+    .ajax
+      .main-chat__footer
+        .main-chat__footer--input_box
+          .input
+            = f.text_field :content, class: 'input', placeholder: 'type a message'
+          .footer_logo
+            = f.label :image, class: 'input-box__image' do
+              = icon('fas', 'image')
+              = f.file_field :image, class: 'display_none'
+        .main-chat__footer--btn
+          = f.submit 'Send', class: 'footer_btn'
