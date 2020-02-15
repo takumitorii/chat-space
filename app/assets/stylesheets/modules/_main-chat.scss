@@ -44,6 +44,7 @@
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding-left: 40px;
+    overflow: auto;
     &--info{
       padding: 35px 0 12px;
       @include flex();
