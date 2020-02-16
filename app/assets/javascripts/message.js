@@ -84,7 +84,7 @@ $(function(){
       }
     })
     .fail(function() {
-      alert.log('error');
+      alert('error');
     });
   }
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
