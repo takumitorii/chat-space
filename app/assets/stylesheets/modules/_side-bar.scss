@@ -50,6 +50,7 @@ $font-weight: bold;
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 0 20px;
+    overflow: auto;
     .side_bar__contents--groups{
       padding:40px 0 20px;
       .group{
