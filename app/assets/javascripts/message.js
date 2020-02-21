@@ -16,7 +16,7 @@ $(function(){
           <p class="lower-message__content">
             ${message.content}
           </p>
-          <img src=${message.image} class="lower-message__image">
+          <img src=${message.image.url} class="lower-message__image">
         </div>
       </div>`
       return html;
@@ -62,6 +62,7 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.footer_btn').prop('disabled', false);
     });
   });
 
