@@ -50,6 +50,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -78,5 +79,5 @@ gem 'mini_magick'
 gem 'fog-aws'
 
 group :production do
-  gem 'unicorn', '5.4.1'
+  gem 'pg'
 end
